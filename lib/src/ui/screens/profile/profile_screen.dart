@@ -1,10 +1,11 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:level_up/src/config/app_routes.dart';
-import 'package:level_up/src/ui/screens/login_screen.dart';
 import 'package:level_up/src/ui/screens/profile/my_profile_screen.dart';
+import 'package:level_up/src/ui/screens/profile/privacy_policy.dart';
 import 'package:level_up/src/ui/screens/profile/setting_screen.dart';
-import '../../../core/widgets/logout_alert_widget.dart';
+import 'package:level_up/src/ui/screens/profile/terms_and_service.dart';
+import 'widgets/logout_alert_widget.dart';
 import '../../../core/widgets/onprogress_widget.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -21,13 +22,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(
-              height: 66,
-            ),
             SizedBox(
               height: 180,
               child: Center(
@@ -172,6 +171,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       thickness: 0.2,
                     ),
                     ListTile(
+                      onTap: () {
+                        Navigator.pushNamed(context, TermsAndService.routeName);
+                      },
                       title: const Text('Terms & Service'),
                       leading: Container(
                         height: 35,
@@ -201,6 +203,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       thickness: 0.2,
                     ),
                     ListTile(
+                      onTap: () {
+                        Navigator.pushNamed(context, PrivacyPolicy.routeName);
+                      },
                       title: const Text('Privacy Policy'),
                       leading: Container(
                         height: 35,
@@ -263,6 +268,4 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
-
-  goToLogin() => Navigator.pushReplacementNamed(context, LoginScreen.routeName);
 }

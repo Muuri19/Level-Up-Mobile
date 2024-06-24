@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../config/app_routes.dart';
-import '../widgets/form_login.dart';
+import '../../../config/app_routes.dart';
+import 'form_login.dart';
 
 class LoginScreen extends StatefulWidget {
   static const routeName = AppRoutes.loginScreen;
@@ -16,6 +16,10 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     final fullWidthContainer = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+      ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
           physics: const ClampingScrollPhysics(),
@@ -23,10 +27,8 @@ class _LoginScreenState extends State<LoginScreen> {
             width: MediaQuery.of(context).size.width,
             child: Column(
               children: [
-                const SizedBox(
-                  height: 100,
-                ),
                 Container(
+                  padding: const EdgeInsets.only(top: 50),
                   height: 80,
                   width: fullWidthContainer,
                   decoration: const BoxDecoration(

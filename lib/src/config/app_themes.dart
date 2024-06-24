@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:level_up/src/common/color_style.dart';
 
 class AppThemes {
   static final ThemeData defaultThema = ThemeData(
@@ -7,7 +8,7 @@ class AppThemes {
     scaffoldBackgroundColor: Colors.white,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xff4C4DDC),
+        backgroundColor: primaryColor,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(10),

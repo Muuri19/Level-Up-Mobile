@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:level_up/src/common/color_style.dart';
 import 'package:level_up/src/config/app_routes.dart';
 import 'package:level_up/src/core/widgets/platform_widget.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:level_up/src/ui/screens/dashboard/dashboard_screen.dart';
 import 'package:level_up/src/ui/screens/okr/okr_screen.dart';
 import 'package:level_up/src/ui/screens/presensi/presensi_screen.dart';
@@ -27,38 +27,46 @@ class _LayoutScreenState extends State<LayoutScreen> {
 
   final List<BottomNavigationBarItem> _bottomNavBarItems = [
     BottomNavigationBarItem(
-        icon: SvgPicture.asset(
-          'assets/navigation/inactive/dashboard.svg',
+        icon: const Icon(
+          Icons.home_outlined,
+          color: Colors.black,
         ),
-        activeIcon: SvgPicture.asset(
-          'assets/navigation/active/dashboard.svg',
+        activeIcon: Icon(
+          Icons.home_rounded,
+          color: primaryColor,
         ),
         label: 'Dashboard',
         backgroundColor: Colors.white),
     BottomNavigationBarItem(
-        icon: SvgPicture.asset(
-          'assets/navigation/inactive/presensi.svg',
+        icon: const Icon(
+          Icons.insert_chart_outlined_rounded,
+          color: Colors.black,
         ),
-        activeIcon: SvgPicture.asset(
-          'assets/navigation/active/presensi.svg',
+        activeIcon: Icon(
+          Icons.insert_chart_rounded,
+          color: primaryColor,
         ),
         label: 'Presensi',
         backgroundColor: Colors.white),
     BottomNavigationBarItem(
-        icon: SvgPicture.asset(
-          'assets/navigation/inactive/okr.svg',
+        icon: const Icon(
+          Icons.calendar_month_outlined,
+          color: Colors.black,
         ),
-        activeIcon: SvgPicture.asset(
-          'assets/navigation/active/okr.svg',
+        activeIcon: Icon(
+          Icons.calendar_month_rounded,
+          color: primaryColor,
         ),
         label: 'Okr',
         backgroundColor: Colors.white),
     BottomNavigationBarItem(
-        icon: SvgPicture.asset(
-          'assets/navigation/inactive/profile.svg',
+        icon: const Icon(
+          Icons.person_outline,
+          color: Colors.black,
         ),
-        activeIcon: SvgPicture.asset(
-          'assets/navigation/active/profile.svg',
+        activeIcon: Icon(
+          Icons.person,
+          color: primaryColor,
         ),
         label: 'Profile',
         backgroundColor: Colors.white),
@@ -76,7 +84,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(30.0),
             topRight: Radius.circular(30.0),
           ),
@@ -85,7 +93,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
               color: Colors.black.withOpacity(0.1),
               spreadRadius: 5,
               blurRadius: 10,
-              offset: Offset(0, 3), // changes position of shadow
+              offset: const Offset(0, 3), // changes position of shadow
             ),
           ],
         ),

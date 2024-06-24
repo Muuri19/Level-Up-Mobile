@@ -16,6 +16,16 @@ dependencies:
   flutter_dotenv: ^5.1.0
   fluent_ui: ^4.8.7
   flutter_svg: ^2.0.10+1
+  url_launcher: ^6.3.0
+  image_picker: ^1.1.2
+  teledart: ^0.6.1
+  http: ^1.2.1
+  percent_indicator: ^4.2.3
+  dropdown_button2: ^2.3.9
+  flutter_image_stack: ^0.0.7
+  expandable: ^5.0.1
+  intl: ^0.19.0
+
 
 dev_dependencies:
   flutter_test:
@@ -35,26 +45,39 @@ flutter:
     - .env
     - assets/logo_levelup.png
     - assets/dev.png
-    #ALERT
+    # ALERT
     - assets/alerts/no-internet.png
     - assets/alerts/onprogress.png
-    - assets/alerts/sad.png
 
-    #NAVIGATION BAR ACTIVE
+    # NAVIGATION BAR ACTIVE
     - assets/navigation/active/dashboard.svg
     - assets/navigation/active/okr.svg
     - assets/navigation/active/presensi.svg
     - assets/navigation/active/profile.svg
-    #NAVIGATION BAR INACTIVE
+    # NAVIGATION BAR INACTIVE
     - assets/navigation/inactive/dashboard.svg
     - assets/navigation/inactive/okr.svg
     - assets/navigation/inactive/presensi.svg
     - assets/navigation/inactive/profile.svg
 
-    #LOGIN
+    # LOGIN
     - assets/login/background-levelup.png
     - assets/login/google.png
 
-    #PROFILE
+    # PRESENSI
+    - assets/presensi/condition.png
+
+    # OKR 
+    - assets/okr/profile.png
+    - assets/okr/pp.png
+    - assets/okr/success.png
+    - assets/okr/failed.png
+    - assets/okr/goal.png
+    - assets/okr/profile-1.png
+    - assets/okr/profile-2.png
+    - assets/okr/profile-3.png
+    - assets/okr/profile-4.png
+
+    # PROFILE
     - assets/profile/instagram.svg
     - assets/profile/linkedin.svg
