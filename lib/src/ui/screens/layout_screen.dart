@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:level_up/src/common/color_style.dart';
 import 'package:level_up/src/config/app_routes.dart';
+import 'package:level_up/src/core/utils/notification_helper.dart';
 import 'package:level_up/src/core/widgets/platform_widget.dart';
 import 'package:level_up/src/ui/screens/dashboard/dashboard_screen.dart';
 import 'package:level_up/src/ui/screens/okr/okr_screen.dart';
 import 'package:level_up/src/ui/screens/presensi/presensi_screen.dart';
 import 'package:level_up/src/ui/screens/profile/profile_screen.dart';
+import 'package:level_up/src/ui/screens/profile/setting_screen.dart';
 
 class LayoutScreen extends StatefulWidget {
   static const routeName = AppRoutes.home;
@@ -16,6 +18,7 @@ class LayoutScreen extends StatefulWidget {
 }
 
 class _LayoutScreenState extends State<LayoutScreen> {
+  final NotificationHelper _notificationHelper = NotificationHelper();
   int _bottomNavIndex = 0;
 
   final List<Widget> _listWidget = [

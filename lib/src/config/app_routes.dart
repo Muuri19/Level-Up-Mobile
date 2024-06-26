@@ -18,4 +18,7 @@ class AppRoutes {
   static const String termsService = '/profile_screen/terms_service';
   static const String privacyPolicy = '/profile_screen/privacy_policy';
   static const String setting = '/profile_screen/setting';
+
+  //TEST
+  static const String test = '/test';
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:level_up/init_supabase.dart';
 import 'package:level_up/src/config/app_routes.dart';
 import 'package:level_up/src/config/app_themes.dart';
+import 'package:level_up/src/core/utils/notification_helper.dart';
 import 'package:level_up/src/ui/screens/dashboard/dashboard_screen.dart';
 import 'package:level_up/src/ui/screens/layout_screen.dart';
 import 'package:level_up/src/ui/screens/auth/login_screen.dart';
@@ -16,11 +18,20 @@ import 'package:level_up/src/ui/screens/profile/setting_screen.dart';
 import 'package:level_up/src/ui/screens/profile/terms_and_service.dart';
 import 'package:level_up/src/ui/screens/auth/register_screen.dart';
 import 'package:level_up/src/ui/screens/splash_screen.dart';
-
+import 'package:level_up/src/ui/screens/test.dart';
 import 'src/ui/screens/okr/add_sprint.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  NotificationHelper notificationHelper = NotificationHelper();
+  notificationHelper.scheduleDailyCheckInNotification();
+  notificationHelper.scheduleDailyCheckOutNotification();
+
+  
+  // notificationHelper.scheduleTestNotification(
+  //     "Test Check In", "Ayo teman-teman jangan lupa check in", 5);
+  // notificationHelper.scheduleTestNotification(
+  //     "Test Check Out", "Ayo teman-teman jangan lupa check in", 15);
   await initSupabase();
   runApp(const MyApp());
 }
@@ -49,7 +60,7 @@ class MyApp extends StatelessWidget {
         OkrScreen.routeName: (context) => const OkrScreen(),
         DetailSprintScreen.routeName: (context) => const DetailSprintScreen(),
         AddSprint.routeName: (context) => const AddSprint(),
-        AddTask.routeName:  (context) => const AddTask(),
+        AddTask.routeName: (context) => const AddTask(),
 
         // PROFILE
         ProfileScreen.routeName: (context) => const ProfileScreen(),
@@ -57,6 +68,9 @@ class MyApp extends StatelessWidget {
         TermsAndService.routeName: (context) => const TermsAndService(),
         PrivacyPolicy.routeName: (context) => const PrivacyPolicy(),
         SettingScreen.routeName: (context) => SettingScreen(),
+
+        // TEST
+        Test.routeName: (context) => const Test(),
       },
     );
   }

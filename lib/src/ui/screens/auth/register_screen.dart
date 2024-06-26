@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:level_up/src/common/color_style.dart';
+import '../../../common/color_style.dart';
 import '../../../config/app_routes.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -15,6 +15,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _isObscure = true;
   String? _emailError;
   String? _passwordError;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
