@@ -16,6 +16,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Dashboard'),
+        centerTitle: true ,
       ),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:level_up/init_supabase.dart';
 import 'package:level_up/src/config/app_routes.dart';
 import 'package:level_up/src/config/app_themes.dart';
@@ -10,6 +10,12 @@ import 'package:level_up/src/ui/screens/auth/login_screen.dart';
 import 'package:level_up/src/ui/screens/okr/add_task.dart';
 import 'package:level_up/src/ui/screens/okr/detail_sprint_screen.dart';
 import 'package:level_up/src/ui/screens/okr/okr_screen.dart';
+import 'package:level_up/src/ui/screens/presensi/activity_screen.dart';
+import 'package:level_up/src/ui/screens/presensi/capture_screen.dart';
+import 'package:level_up/src/ui/screens/presensi/condition_screen.dart';
+import 'package:level_up/src/ui/screens/presensi/detail_presensi.dart';
+import 'package:level_up/src/ui/screens/presensi/history_presensi.dart';
+import 'package:level_up/src/ui/screens/presensi/location_screen.dart';
 import 'package:level_up/src/ui/screens/presensi/presensi_screen.dart';
 import 'package:level_up/src/ui/screens/profile/my_profile_screen.dart';
 import 'package:level_up/src/ui/screens/profile/privacy_policy.dart';
@@ -27,11 +33,9 @@ Future<void> main() async {
   notificationHelper.scheduleDailyCheckInNotification();
   notificationHelper.scheduleDailyCheckOutNotification();
 
-  
   // notificationHelper.scheduleTestNotification(
   //     "Test Check In", "Ayo teman-teman jangan lupa check in", 5);
-  // notificationHelper.scheduleTestNotification(
-  //     "Test Check Out", "Ayo teman-teman jangan lupa check in", 15);
+
   await initSupabase();
   runApp(const MyApp());
 }
@@ -54,7 +58,15 @@ class MyApp extends StatelessWidget {
         // MAIN
         LayoutScreen.routeName: (context) => const LayoutScreen(),
         DashboardScreen.routeName: (context) => const DashboardScreen(),
+
+        // PRESENSI
         PresensiScreen.routeName: (context) => const PresensiScreen(),
+        ConditionScreen.routeName: (context) => const ConditionScreen(),
+        LocationScreen.routeName: (context) => const LocationScreen(),
+        ActivityScreen.routeName: (context) => const ActivityScreen(),
+        CaptureScreen.routeName: (context) => const CaptureScreen(),
+        HistoryPresensi.routeName: (context) => const HistoryPresensi(),
+        DetailPresensi.routeName: (context) => const DetailPresensi(),
 
         // OKR
         OkrScreen.routeName: (context) => const OkrScreen(),

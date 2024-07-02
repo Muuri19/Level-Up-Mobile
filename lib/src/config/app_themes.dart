@@ -3,20 +3,21 @@ import 'package:level_up/src/common/color_style.dart';
 
 class AppThemes {
   static final ThemeData defaultThema = ThemeData(
-    appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.white, surfaceTintColor: Colors.white),
-    scaffoldBackgroundColor: Colors.white,
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: primaryColor,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
+      appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white, surfaceTintColor: Colors.white),
+      scaffoldBackgroundColor: Colors.white,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: primaryColor,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
           ),
         ),
       ),
-    ),
-  );
+      );
+          
 
   static final ThemeData lightTheme = ThemeData(
     primarySwatch: Colors.blue,

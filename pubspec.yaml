@@ -56,15 +56,15 @@ flutter:
     - assets/alerts/onprogress.png
 
     # NAVIGATION BAR ACTIVE
-    - assets/navigation/active/dashboard.svg
+    - assets/navigation/active/home.svg
     - assets/navigation/active/okr.svg
     - assets/navigation/active/presensi.svg
-    - assets/navigation/active/profile.svg
+    - assets/navigation/active/ratings.svg
     # NAVIGATION BAR INACTIVE
-    - assets/navigation/inactive/dashboard.svg
+    - assets/navigation/inactive/home.svg
     - assets/navigation/inactive/okr.svg
     - assets/navigation/inactive/presensi.svg
-    - assets/navigation/inactive/profile.svg
+    - assets/navigation/inactive/ratings.svg
 
     # LOGIN
     - assets/login/background-levelup.png
@@ -72,6 +72,15 @@ flutter:
 
     # PRESENSI
     - assets/presensi/condition.png
+    - assets/presensi/checkin.png
+    - assets/presensi/checkout.png
+    - assets/presensi/healthy.png
+    - assets/presensi/unwell.png
+    - assets/presensi/sick.png
+    - assets/presensi/map.png
+    - assets/presensi/wfo.png
+    - assets/presensi/wfh.png
+    - assets/presensi/wfa.png
 
     # OKR 
     - assets/okr/profile.png

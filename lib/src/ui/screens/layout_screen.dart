@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:level_up/src/common/color_style.dart';
 import 'package:level_up/src/config/app_routes.dart';
 import 'package:level_up/src/core/utils/notification_helper.dart';
 import 'package:level_up/src/core/widgets/platform_widget.dart';
 import 'package:level_up/src/ui/screens/dashboard/dashboard_screen.dart';
 import 'package:level_up/src/ui/screens/okr/okr_screen.dart';
+import 'package:level_up/src/ui/screens/penilaian_360/ratings_screen.dart';
 import 'package:level_up/src/ui/screens/presensi/presensi_screen.dart';
 import 'package:level_up/src/ui/screens/profile/profile_screen.dart';
-import 'package:level_up/src/ui/screens/profile/setting_screen.dart';
 
 class LayoutScreen extends StatefulWidget {
   static const routeName = AppRoutes.home;
@@ -18,58 +19,45 @@ class LayoutScreen extends StatefulWidget {
 }
 
 class _LayoutScreenState extends State<LayoutScreen> {
-  final NotificationHelper _notificationHelper = NotificationHelper();
   int _bottomNavIndex = 0;
 
   final List<Widget> _listWidget = [
     const DashboardScreen(),
     const PresensiScreen(),
     const OkrScreen(),
+    const RatingsScreen(),
     const ProfileScreen()
   ];
 
   final List<BottomNavigationBarItem> _bottomNavBarItems = [
     BottomNavigationBarItem(
-        icon: const Icon(
-          Icons.home_outlined,
-          color: Colors.black,
-        ),
-        activeIcon: Icon(
-          Icons.home_rounded,
-          color: primaryColor,
-        ),
-        label: 'Dashboard',
+        icon: SvgPicture.asset('assets/navigation/inactive/home.svg'),
+        activeIcon: SvgPicture.asset('assets/navigation/active/home.svg'),
+        label: 'Home',
         backgroundColor: Colors.white),
     BottomNavigationBarItem(
-        icon: const Icon(
-          Icons.insert_chart_outlined_rounded,
-          color: Colors.black,
-        ),
-        activeIcon: Icon(
-          Icons.insert_chart_rounded,
-          color: primaryColor,
-        ),
+        icon: SvgPicture.asset('assets/navigation/inactive/presensi.svg'),
+        activeIcon: SvgPicture.asset('assets/navigation/active/presensi.svg'),
         label: 'Presensi',
         backgroundColor: Colors.white),
     BottomNavigationBarItem(
-        icon: const Icon(
-          Icons.calendar_month_outlined,
-          color: Colors.black,
-        ),
-        activeIcon: Icon(
-          Icons.calendar_month_rounded,
-          color: primaryColor,
-        ),
+        icon: SvgPicture.asset('assets/navigation/inactive/okr.svg'),
+        activeIcon: SvgPicture.asset('assets/navigation/active/okr.svg'),
         label: 'Okr',
         backgroundColor: Colors.white),
     BottomNavigationBarItem(
-        icon: const Icon(
-          Icons.person_outline,
-          color: Colors.black,
+        icon: SvgPicture.asset('assets/navigation/inactive/ratings.svg'),
+        activeIcon: SvgPicture.asset('assets/navigation/active/ratings.svg'),
+        label: 'Rating',
+        backgroundColor: Colors.white),
+    BottomNavigationBarItem(
+        icon: CircleAvatar(
+          radius: 12.5,
+          child: Text('M'),
         ),
-        activeIcon: Icon(
-          Icons.person,
-          color: primaryColor,
+        activeIcon: CircleAvatar(
+          radius: 12.5,
+          child: Text('S'),
         ),
         label: 'Profile',
         backgroundColor: Colors.white),
@@ -96,7 +84,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
               color: Colors.black.withOpacity(0.1),
               spreadRadius: 5,
               blurRadius: 10,
-              offset: const Offset(0, 3), // changes position of shadow
+              offset: const Offset(0, 3),
             ),
           ],
         ),
@@ -106,9 +94,10 @@ class _LayoutScreenState extends State<LayoutScreen> {
             topRight: Radius.circular(30.0),
           ),
           child: BottomNavigationBar(
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            backgroundColor: Colors.white,
+            showSelectedLabels: true,
+            showUnselectedLabels: true,
+            selectedItemColor: primaryColor,
+            unselectedItemColor: blackColor,
             currentIndex: _bottomNavIndex,
             items: _bottomNavBarItems,
             onTap: _onBottomNavTapped,

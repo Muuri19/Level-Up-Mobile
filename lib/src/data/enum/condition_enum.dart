@@ -1,0 +1,1 @@
+enum ConditionEnum {healthy, unwell, sick}

@@ -4,7 +4,16 @@ class AppRoutes {
   static const String registerScreen = '/register_screen';
   static const String home = '/layout_screen';
   static const String dashboard = '/dashboard_screen';
+
+  // PRESENSI
   static const String presensi = '/presensi_screen';
+  static const String condition = 'presensi_screen/condition';
+  static const String location = 'presensi_screen/condition/location';
+  static const String activity = 'presensi_screen/condition/location/activity';
+  static const String capture = 'presensi_screen/condition/location/activity/capture';
+  static const String history = 'presensi_screen/history';
+  static const String detail = 'presensi_screen/history/detail';
+  
 
   // OKR
   static const String okr = '/okr_screen';
